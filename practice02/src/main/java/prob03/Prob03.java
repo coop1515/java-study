@@ -18,12 +18,13 @@ public class Prob03 {
 	}
 
 	public static void replaceSpace(char a[]) {
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] == ' ') { // char 는 "" 하면 안됨..
+				a[i] = ',';
 
-		String str = new String(a);
-		str = str.replace(" ", ",");
-		System.out.println(str);
-		a = str.toCharArray();
-		System.out.println(a);
+			}
+
+		}
 	}
 
 	public static void printCharArray(char a[]) {
