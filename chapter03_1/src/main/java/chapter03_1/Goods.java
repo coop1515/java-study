@@ -1,11 +1,19 @@
 package chapter03_1;
 
 public class Goods {
+	public static int countOfGoods;
 	private String name;
 	private int price;
 	private int countStock;
 	private int countSold;
-
+	
+	//if(a.f() == false) -> a.f()가 이미 false를 뜻함 if(a.f()) 
+	public Goods() {
+		Goods.countOfGoods++;
+		//Goods.countOfGoods += 1;
+		//Goods.countOfGoods = Goods.countOfGoods + 1;
+	}
+	//source탭에서 getter / setter
 	public String getName() {
 		return name;
 	}
@@ -41,6 +49,17 @@ public class Goods {
 
 	public void setCountSold(int countSold) {
 		this.countSold = countSold;
+	}
+	public void showInfo() {
+		System.out.println(
+				"name: " + name +
+				" price: " + price +
+				" countStock: " + countStock+
+				" countSold: " + countSold);
+		
+	}
+	public int calcDiscountPrice(double discountRate) {
+		return (int)(discountRate * price);
 	}
 
 }
