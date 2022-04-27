@@ -25,9 +25,9 @@ Java 네트워크 프로그래밍 수업 예제
 자바 객체지향 프로그래밍 연습문제5
 
 1.class
-  ###필드 (field)
-  ###생성자 (constructor)
-  ###메소드 (method)
+  ### 필드 (field)
+  ### 생성자 (constructor)
+  ### 메소드 (method)
 
 2.캡슐화(정보은닉) (capsule)
 
