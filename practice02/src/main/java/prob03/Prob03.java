@@ -12,7 +12,7 @@ public class Prob03 {
 
 		// 공백 문자 바꾸기
 		replaceSpace(c);
-		System.out.println(c);
+		
 		// 수정된 배열 원소 출력
 		printCharArray(c);
 	}

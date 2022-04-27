@@ -1,27 +1,26 @@
 package prob02;
 
 public class Goods {
-	private int coke;
-	private int cider;
-	private int beer;
-	public int getCoke() {
-		return coke;
+	private String[] name;
+	private int[] price;
+	private int[] count;
+	public String[] getName() {
+		return name;
 	}
-	public void setCoke(int coke) {
-		this.coke = coke;
+	public void setName(String[] name) {
+		this.name = name;
 	}
-	public int getCider() {
-		return cider;
+	public int[] getPrice() {
+		return price;
 	}
-	public void setCider(int cider) {
-		this.cider = cider;
+	public void setPrice(int[] price) {
+		this.price = price;
 	}
-	public int getBeer() {
-		return beer;
+	public int[] getCount() {
+		return count;
 	}
-	public void setBeer(int beer) {
-		this.beer = beer;
+	public void setCount(int[] count) {
+		this.count = count;
 	}
-	
 	
 }
