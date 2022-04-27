@@ -34,16 +34,16 @@ Java 네트워크 프로그래밍 수업 예제
 3.상속 (inheritance)
 
 4.다형성 (polymorphism)
-  ###overload -> & class
-  ###override -> & inheritance
+  ##### overload -> & class
+  ##### override -> & inheritance
 
 5.추상클래스 (abstract class)
-  ###인터페이스 (interface)
-  ###API -> SOLID 설계 5원칙
-  ###SRP Single Responsibility Principle 단일 책임
-  ###OCP Open Close 개방 폐쇄 
-  ###LSP Listov Substitution 리스코프치환
-  ###ISP Interface segregation 인터페이스 분리
-  ###DIP Dependency Inversion 의존 역전
+  ##### 인터페이스 (interface)
+  ##### API -> SOLID 설계 5원칙
+  ##### SRP Single Responsibility Principle 단일 책임
+  ##### OCP Open Close 개방 폐쇄 
+  ##### LSP Listov Substitution 리스코프치환
+  ##### ISP Interface segregation 인터페이스 분리
+  ##### DIP Dependency Inversion 의존 역전
   
 Procedural Programming
