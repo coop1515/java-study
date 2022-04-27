@@ -18,9 +18,8 @@ public class Prob04 {
 		{
 			b[i] = a[str.length()-i-1];
 		}
-		a = b;
-		System.out.println(Arrays.toString(a));
-		return a;
+		System.out.println(Arrays.toString(b));
+		return b;
 	}
 
 	public static void printCharArray(char[] array) {
