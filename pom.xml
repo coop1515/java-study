@@ -5,11 +5,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>chapter03</module>
 		<module>practice01</module>
 		<module>practice02</module>
 		<module>practice03</module>
 		<module>practice04</module>
 		<module>practice05</module>
+		<module>chapter03_1</module>
 	</modules>
 </project>
