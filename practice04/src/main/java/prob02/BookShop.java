@@ -27,6 +27,7 @@ public class BookShop {
 		for (int i = 0; i < books.length; i++) {
 			if(books[i].getBookNo() == num) {
 				books[i].setStateCode(0);
+				books[i].rent();
 				
 			}
 		}

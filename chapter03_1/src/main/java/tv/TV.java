@@ -25,8 +25,14 @@ public class TV {
 
 	public void volume(boolean up) {
 		volume(volume + (up ? 1 : -1));
-
+		
 		// volume += (up ? 1:-1);
+		if (volume < 0) {
+			volume = 0;
+		}
+		else if (volume > 100) {
+			volume = 100;
+		}
 //		if(volume < 0) {
 //			volume = 0;
 //		}
@@ -53,6 +59,13 @@ public class TV {
 
 	public void channel(boolean up) {
 		channel(channel + (up ? 1:-1));
+		if (channel < 0) {
+			channel = 0;
+		}
+		else if (channel > 255) {
+			channel = 255;
+		}
+		
 		
 	}
 }
