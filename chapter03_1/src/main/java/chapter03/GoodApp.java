@@ -1,4 +1,4 @@
-package chapter03_1;
+package chapter03;
 
 public class GoodApp {
 
@@ -12,8 +12,10 @@ public class GoodApp {
 		
 		goods.showInfo();
 		
-		Goods goods2 = new Goods();
-		Goods goods3 = new Goods();
+		Goods goods2 = new Goods("tv",10000,10,10);
+		goods2.showInfo();
+		Goods goods3 = new Goods("Computer");
+		goods3.showInfo();
 		System.out.println("Goods Count:" + Goods.countOfGoods);
 		
 		// discount price 구하기

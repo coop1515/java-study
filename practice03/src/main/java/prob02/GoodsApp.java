@@ -16,13 +16,13 @@ public class GoodsApp {
 			System.out.println(line);
 			String[] tokens = line.split(" ");
 			
-			//String name = tokens[0];
-			//int price = Integer.parseInt(tokens[1]);
-			//int count = Integer.parseInt(tokens[2]);
-			goods[i].setName(tokens);
+			String name = tokens[0];
+			int price = Integer.parseInt(tokens[1]);
+			int count = Integer.parseInt(tokens[2]);
+			 
 		}
 		// 상품 출
-		System.out.println(goods[0]);
+		
 		// 자원정리
 		scanner.close();
 	}

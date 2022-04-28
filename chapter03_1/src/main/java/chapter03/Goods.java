@@ -1,4 +1,4 @@
-package chapter03_1;
+package chapter03;
 
 public class Goods {
 	public static int countOfGoods;
@@ -8,12 +8,33 @@ public class Goods {
 	private int countSold;
 	
 	//if(a.f() == false) -> a.f()가 이미 false를 뜻함 if(a.f()) 
+		/*public Goods() {
+			Goods.countOfGoods++;
+			//Goods.countOfGoods += 1;
+			//Goods.countOfGoods = Goods.countOfGoods + 1;
+		}*/
+		//source탭에서 getter / setter
+		
+	public Goods(String name, int price, int countStock, int countSold) {
+		//Goods.countOfGoods = Goods.countOfGoods + 1;
+		
+		this.name =name;
+		this.price = price;
+		this.countStock =countStock;
+		this.countSold=countSold;
+	}
 	public Goods() {
-		Goods.countOfGoods++;
-		//Goods.countOfGoods += 1;
+		this(null,0,0,0);
 		//Goods.countOfGoods = Goods.countOfGoods + 1;
 	}
-	//source탭에서 getter / setter
+	
+	public Goods(String name) {
+		this(name,0,0,0);
+		//this.name = name;
+		//Goods.countOfGoods = Goods.countOfGoods + 1;
+		
+	}	
+	
 	public String getName() {
 		return name;
 	}
