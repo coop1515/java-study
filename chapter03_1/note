@@ -13,3 +13,12 @@ int a (double, int)
 
 getter와 setter setting
 Tap -> source -> general getter and setter
+
+overload => goods, goodsApp.java 파일 참조
+
+overriding => Point, ColorPoint.java 파일 참조
+
+부모 클래스가 추상클래스면 자식 클래스가 추상클래스를 현실화 해야함. 아니면 자식 클래스도 추상클래스가 됨.
+
+abstract 추상화
+=>Rectangel,Triangle, shape.java파일 참조
