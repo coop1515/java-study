@@ -5,6 +5,18 @@ public class TV {
 	private int volume; // 0 ~ 100 rotation
 	private boolean power;
 
+	public int getChannel() {
+		return channel;
+	}
+
+	public int getVolume() {
+		return volume;
+	}
+
+	public boolean isPower() {
+		return power;
+	}
+
 	public TV(int channel, int volume, boolean power) {
 		this.channel = channel;
 		this.volume = volume;
