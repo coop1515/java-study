@@ -24,8 +24,8 @@ public class Goods {
 		this.countSold=countSold;
 	}
 	public Goods() {
-		this(null,0,0,0);
 		//Goods.countOfGoods = Goods.countOfGoods + 1;
+		this(null,0,0,0);
 	}
 	
 	public Goods(String name) {
