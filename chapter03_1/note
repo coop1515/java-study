@@ -22,3 +22,26 @@ overriding => Point, ColorPoint.java 파일 참조
 
 abstract 추상화
 =>Rectangel,Triangle, shape.java파일 참조
+
+package
+1. 애플리케이션 구조(architecture)****
+2. class 구분 
+
+A(a.com)'s Point
+
+com.a.graphics.Point
+[회사 도메인].[프로젝트].[구조].[클래스]
+
+B(b.com)'s Point
+
+com.b.graphics.Point
+-----------------------------------
+
+com.douzone.paint.interface ex)Drawable
+com.douzone.paint.point
+com.douzone.paint.shape
+com.douzone.paint.text
+com.douzone.paint.main
+
+
+
