@@ -13,5 +13,13 @@ public class Sparrow extends Bird {
 		System.out.println("참새("+getName()+")는 소리내어 웁니다.");
 
 	}
-
+	
+	@Override
+	public void setName(String name) {
+		this.name = "짹짹";
+	}
+	
+	public String toString() {
+		return "참새의 이름은 "+ name +"입니다.";
+	}
 }

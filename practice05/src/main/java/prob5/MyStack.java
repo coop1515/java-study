@@ -6,11 +6,10 @@ public class MyStack {
 	
 	public MyStack(int size) {
 		buffer = new String[size];
-		
 	}
 	
 	public void push(String item) {
-		
+		this.buffer[0] = item;
 	}
 	
 	public String pop() {
