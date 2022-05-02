@@ -35,7 +35,8 @@ public class StringTest03 {
 		}
 		// +는 String concat(연결) 연산자
 //		String s5 = "Hello" + "World" + "Java" + 1.8;
-		String s5 = new StringBuffer("Hello").append("World").append("Java").append(1.8).toString();
+		String s5 = new StringBuffer("Hello").append("World")
+					.append("Java").append(1.8).toString();
 		System.out.println(s5);
 		
 		String s6 = "";
@@ -52,7 +53,8 @@ public class StringTest03 {
 		
 		String s7 = sb6.toString();
 		System.out.println(s7.length());
-	
+		
+		
 	}
 
 }
