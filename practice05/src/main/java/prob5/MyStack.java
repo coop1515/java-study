@@ -6,25 +6,40 @@ public class MyStack {
 	
 
 	public MyStack(int size) {
+		top = 0;
 		buffer = new String[size];
 		
 	}
 
 	public void push(String item) {
+		if(top == buffer.length)
+		{
+			resize();
+		}
 		buffer[top] = item;
 		top++;
 	}
 
-	public String pop() throws MyStackException {
-		if (false) {
-			throw new MyStackException("");
+	private void resize() {
+		String[] temp = new String[buffer.length*2];
+		for (int i = 0; i < top; i ++) {
+			temp[i] = buffer[i];
 		}
 		
-		return null;
+		buffer = temp;
+	}
+
+	public String pop() throws MyStackException {
+		if (isEmpty()) {
+			throw new MyStackException("stack is empty");
+		}
+		String temp = buffer[top-1];
+		buffer[top--] = null;
+		return temp;
 	}
 
 	public boolean isEmpty() {
 		
-		return false;
+		return top == 0;
 	}
 }
