@@ -1,5 +1,6 @@
 package prob01;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Gugudan {
@@ -28,10 +29,10 @@ public class Gugudan {
 
 			System.out.print(answerNumbers[i]);
 		}
-
+		
 		System.out.print("\n\n");
 		System.out.print("answer:");
-
+		
 		Scanner s = new Scanner(System.in);
 		int answer = s.nextInt();
 		s.close();
@@ -46,8 +47,22 @@ public class Gugudan {
 
 	private static int[] randomizeAnswers() {
 		/* 코드 작성(수정 가능) */
+		Random random = new Random();
+
 		final int COUNT_ANSWER_NUMBER = 9;
 		int[] boardNumbers = new int[COUNT_ANSWER_NUMBER];
+		for (int i = 0; i < 9; i++) {
+			int first = 1+ random.nextInt(8);
+			int second = 1+ random.nextInt(8);
+			int temp = first * second;
+			
+//			for(int j = 0; j < boardNumbers.length; j++){
+//				if(temp == boardNumbers[j]) {
+//					j--;
+//				}
+//			}
+			boardNumbers[i] = first * second;
+		}
 		return boardNumbers;
 	}
 }
