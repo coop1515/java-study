@@ -26,4 +26,34 @@ ArrayList는 내가 직접 동기화처리를 다 해야함.
 
 Stack
 
-push && pop 
+push && pop
+
+IO Stream의 단위는 byte단위와 char단위로 나뉜다.
+	
+byte단위 Stream (byte단위 Stream들은 이름에 Stream이 많이 들어감.)
+1. Input Stream
+	FileInputStream(기반)
+	FilterInputStream(보조)
+		BufferdOutputStream(보조)
+
+2. Output Stream
+	FileoutputStream(기반)
+	FileterOutputStream(보조)
+
+char단위 Stream
+
+1. Reader
+	FileReader(기반)
+	BufferedReader(보조)
+	
+2. Writer
+
+
+주 stream(기반 스트림)과 보조 stream으로 나뉘는데.
+
+보조 stram은 객체지향에 많이 사용됨.
+
+기반 스트림을 보조해주는 것이 보조 스트림임.
+
+FileInputStream (byte단위) -> InputStreamReader(char단위) -> BufferedReader 
+byte|byte|byte -> char -> char|char|char| -> String
