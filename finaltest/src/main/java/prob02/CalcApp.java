@@ -31,7 +31,6 @@ public class CalcApp {
 //			String cal = tokens[3];
 			
 			
-			@SuppressWarnings("null")
 			int result = arithmetic.calculate(lValue, rValue);
 			System.out.println( ">> " + result );
 		}
