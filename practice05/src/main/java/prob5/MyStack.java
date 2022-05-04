@@ -35,6 +35,8 @@ public class MyStack {
 		}
 		String temp = buffer[top-1];
 		buffer[top--] = null;
+//		buffer[top] = null;
+//		top--;
 		return temp;
 	}
 

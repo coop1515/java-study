@@ -44,7 +44,6 @@ public class Gugudan {
 		int random = (int) (Math.random() * rNum) + lNum;
 		return random;
 	}
-
 	private static int[] randomizeAnswers() {
 		/* 코드 작성(수정 가능) */
 		Random random = new Random();
@@ -54,8 +53,7 @@ public class Gugudan {
 		for (int i = 0; i < 9; i++) {
 			int first = 1+ random.nextInt(8);
 			int second = 1+ random.nextInt(8);
-			int temp = first * second;
-			
+//			int temp = first * second;
 //			for(int j = 0; j < boardNumbers.length; j++){
 //				if(temp == boardNumbers[j]) {
 //					j--;

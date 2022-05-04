@@ -28,7 +28,10 @@ public class CalcApp {
 			Arithmetic arithmetic = null;
 			
 			/* 코드 작성 */
+//			String cal = tokens[3];
 			
+			
+			@SuppressWarnings("null")
 			int result = arithmetic.calculate(lValue, rValue);
 			System.out.println( ">> " + result );
 		}
