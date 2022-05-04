@@ -37,5 +37,10 @@ public class LoginMain {
 	
 	public static void login(List<User> users, User user ){
 		/* 코드 작성 */
+		if(!users.contains(user)) {
+			System.out.println("error");
+		}
+	
+	
 	}
 }

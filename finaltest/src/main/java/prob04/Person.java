@@ -3,15 +3,20 @@ package prob04;
 public class Person {
 	
 	private static int numberOfPerson; // 전체 인구수
-	private int age = 12;
-	private String name = "";
+	private int age ;
+	private String name;
 	/* 코드 작성 */
 	public Person() {
+		this.age = 12;
+		this.name = "";
+		
 			}
 	public Person(String string) {
 		this.name = string;
+		this.age = 12;
 		this.numberOfPerson++;
 	}
+	
 	public Person(int i, String string) {
 		this.age = i;
 		this.name = string;
