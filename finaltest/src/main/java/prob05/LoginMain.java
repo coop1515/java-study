@@ -41,22 +41,18 @@ public class LoginMain {
 //		user.getId();
 //		System.out.println(users.get(0).getId());
 		String id = null;
-		String pw = null;
 		for (int i = 0; i < users.size(); i++) {
 			if (users.get(i).getId().equals(user.getId())) {
 				id = user.getId();
+				if(users.get(i).getPassword().equals(user.getPassword())) {
+					break;
+				}
+				else {
+					throw new PasswordDismatchException();
+				}
 			}
-			else {
-				throw new UserNotFoundException();
-			}
-			if (users.get(i).getPassword().equals(user.getPassword())) {
-				pw = user.getPassword();
-			}else {
-				throw new UserNotFoundException();
-			}
-			if (!users.get(i).getId().equals(id) && users.get(i).getPassword().equals(pw)) {
-				throw new PasswordDismatchException();
-			}
+		} if(id == null) {
+			throw new UserNotFoundException();
 		}
 	}
 
