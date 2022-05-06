@@ -106,19 +106,36 @@ public class RequestHandler extends Thread {
 		outputStream.write(body);
 	}
 
-	private void response400Error(OutputStream outputStream, String url, String protocol) {
+	private void response400Error(OutputStream outputStream, String url, String protocol) throws IOException {
 		// HTTP/1.1 404 File Not Found\n
 		// Content-Type: text/html; charset=utf-8\n"
 		// \n
-		// /error/404.html 내용
+		// /error/400.html 내용
+		
+		url = "/error/400.html";
+		File file = new File("./webapp" + url);
+		byte[] body = Files.readAllBytes(file.toPath());
+		
+		outputStream.write((protocol + " 200 OK\n").getBytes("UTF-8"));
+		outputStream.write(("Content-Type: text/html; charset=utf-8\n").getBytes("UTF-8"));
+		outputStream.write("\n".getBytes());	
+		outputStream.write(body);
 
 	}
 
-	private void response404Response(OutputStream outputStream, String url, String protocol) {
+	private void response404Response(OutputStream outputStream, String url, String protocol) throws IOException {
 		// HTTP/1.1 404 File Not Found\n
 		// Content-Type: text/html; charset=utf-8\n"
 		// \n
 		// /error/404.html 내용
+		url = "/error/404.html";
+		File file = new File("./webapp" + url);
+		byte[] body = Files.readAllBytes(file.toPath());
+		
+		outputStream.write((protocol + " 200 OK\n").getBytes("UTF-8"));
+		outputStream.write(("Content-Type: text/html; charset=utf-8\n").getBytes("UTF-8"));
+		outputStream.write("\n".getBytes());	
+		outputStream.write(body);
 	}
 
 	public void consoleLog(String message) {
