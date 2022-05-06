@@ -8,8 +8,9 @@ public class Money {
 	}
 
 	public Object add(Money money) {
-//		this.amount = amount + 
-		return amount;
+		
+		int amount = this.amount; 
+		return 0;
 	}
 
 	public Object minus(Money money) {
