@@ -37,10 +37,17 @@ public class LoginMain {
 	
 	public static void login(List<User> users, User user ){
 		/* 코드 작성 */
-		if(!users.contains(user)) {
-			System.out.println("error");
+		
+//		user.getId();
+//		System.out.println(users.get(0).getId());
+		for(int i = 0; i < users.toArray().length; i++) {
+			if(users.get(i).getId() == user.getId());
+				System.out.println("로그인성공");
 		}
+	}
+		
+		
 	
 	
 	}
-}
+
