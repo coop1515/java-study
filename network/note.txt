@@ -14,6 +14,9 @@ ex) Enter 닉네임, EnterOK 입장하셨습니다, MESSAGE "닉네임 : 블라�
 심화) 리스트에 클라이언트의 name,printwrither, owner를넣어서 뽑아쓰기.
 TALK를 만들어서 귓속말 구현.
 
+==> 서버 먼저 구현
+테스트는 xshell에서 telnet으로.
+
 centos7 - java, tomcat, jenkins, maven, git, MariaDB
 
 RDBMS - SQL(DML), Schema Design, JDBC Programming
