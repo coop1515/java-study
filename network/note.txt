@@ -3,6 +3,16 @@ network
 -- TCP algorithm
 -- UDP
 -- chatting c/s: 과제 -> TCP network 5장 ppt
+서버에는 클라이언트 IP만 출력
+client는 접속하면 닉네임입력하고 끝나면
+입장하였습니다. 즐거운 채팅 되세요. 뜨고 다른 client에게는 누구누구님이 입장하였습니다. 라고 출력됨.
+받는 사람은 닉네임 : 메세지 출력.
+: 사용하려면 java base64를 이용.
+ex) Enter 닉네임, EnterOK 입장하셨습니다, MESSAGE "닉네임 : 블라블라"
+클라이언트끼리는 list를 공유해야함.
+
+심화) 리스트에 클라이언트의 name,printwrither, owner를넣어서 뽑아쓰기.
+TALK를 만들어서 귓속말 구현.
 
 centos7 - java, tomcat, jenkins, maven, git, MariaDB
 

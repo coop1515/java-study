@@ -8,31 +8,32 @@ import java.net.SocketException;
 public class UDPEchoServer {
 	public static final int PORT = 9999;
 	public static final int BUFFER_SIZE = 1024;
+
 	public static void main(String[] args) {
 		DatagramSocket socket = null;
 
 		// 1. 소켓 생성
 		try {
 			socket = new DatagramSocket(PORT);
-			while(true) {
-				//2. 데이터 수신
-				DatagramPacket rcvPacket = new DatagramPacket(new byte[BUFFER_SIZE], BUFFER_SIZE );
+			while (true) {
+				// 2. 데이터 수신
+				DatagramPacket rcvPacket = new DatagramPacket(new byte[BUFFER_SIZE], BUFFER_SIZE);
 				socket.receive(rcvPacket); // blocking (IOException 일어남.)
-				
+
 				byte[] rcvData = rcvPacket.getData();
 				int length = rcvPacket.getLength();
 				String message = new String(rcvData, 0, length, "UTF-8");
 				System.out.println("[server] receive:" + message);
-				
-				//3. 데이터 송신
+
+				// 3. 데이터 송신
 				byte[] sndData = message.getBytes("UTF-8");
-				DatagramPacket sndPacket = new DatagramPacket(sndData, sndData.length,
-						rcvPacket.getAddress(), rcvPacket.getPort());
+				DatagramPacket sndPacket = new DatagramPacket(sndData, sndData.length, rcvPacket.getAddress(),
+						rcvPacket.getPort());
 				socket.send(sndPacket);
 			}
 		} catch (SocketException e) {
 			System.out.println("Error:" + e);
-		}catch (IOException e) {
+		} catch (IOException e) {
 			System.out.println("Error:" + e);
 		} finally {
 			if (socket != null && !socket.isClosed()) {
