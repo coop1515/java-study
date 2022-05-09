@@ -1,0 +1,20 @@
+network
+
+-- TCP algorithm
+-- UDP
+-- chatting c/s: 과제 -> TCP network 5장 ppt
+
+centos7 - java, tomcat, jenkins, maven, git, MariaDB
+
+RDBMS - SQL(DML), Schema Design, JDBC Programming
+
+LISTENING
+ESTABLISHED
+
+FIN_WAIT1
+			CLOSE_WAIT
+FIN_WAIT2
+			LAST_ACK
+TIME_WAIT
+			CLOSED
+CLOSED
