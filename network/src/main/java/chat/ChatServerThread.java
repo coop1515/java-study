@@ -57,7 +57,7 @@ public class ChatServerThread extends Thread {
 				} else if ("message".equals(tokens[0])) {
 					doMessage(tokens[1]);
 				} else if ("quit".equals(tokens[0])) {
-					doQuit();
+					doQuit(printWriter);
 				} else {
 					ChatServer.log("에러 : 알 수 없는 요청(" + tokens[0] + ")");
 				}
@@ -83,17 +83,12 @@ public class ChatServerThread extends Thread {
 		}
 
 	}
-
-	private void doQuit() {
-
-	}
-
 	private void doQuit(Writer writer) {
+		
 		removeWriter(writer);
-
 		String data = nickname + "님이 퇴장 하였습니다.";
+		System.out.println(data);
 		broadcast(data);
-
 	}
 
 	private void broadcast(String data) {

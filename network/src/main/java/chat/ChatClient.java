@@ -32,12 +32,12 @@ public class ChatClient {
 			while (true) {
 				System.out.print(">> ");
 				String input = scanner.nextLine();
-
-				if ("quit".equals(input) == true) {
+				printWriter.println(input);
+				if ("quit".equals(input)) {
 					break;
 				} else {
 					// 메세지 처리
-					printWriter.println(input);
+				
 				}
 //				String data = bufferedReader.readLine();
 //				if(data == null) {
