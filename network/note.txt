@@ -31,3 +31,8 @@ FIN_WAIT2
 TIME_WAIT
 			CLOSED
 CLOSED
+
+java AWT(Abstract Window Toolkit)
+
+GUI (Graphic User Interface)
+CLI (Command Line Interface)

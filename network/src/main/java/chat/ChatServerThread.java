@@ -96,7 +96,7 @@ public class ChatServerThread extends Thread {
 			for (Writer writer : listWriters) {
 				PrintWriter printWriter = (PrintWriter) writer;
 				printWriter.println(data);
-				printWriter.flush();
+//				printWriter.flush();
 			}
 		}
 
@@ -118,7 +118,7 @@ public class ChatServerThread extends Thread {
 		broadcast(data);
 		addWriter(writer);
 		printWriter.println("join:ok");
-		printWriter.flush();
+//		printWriter.flush();
 	}
 
 	private void addWriter(Writer writer) {
