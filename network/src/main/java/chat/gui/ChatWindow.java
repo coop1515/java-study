@@ -45,14 +45,25 @@ public class ChatWindow {
 //			}
 //		});
 		buttonSend.addActionListener(( ActionEvent actionEvent ) ->
-								{System.out.println("clicked!!");
-			
+								{
+//									System.out.println("clicked!!");
+			sendMessage();
 		}
 		);
-
+		
 		// Textfield
 		textField.setColumns(80);
+		textField.addKeyListener(new KeyAdapter() {
 
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyCode = e.getKeyChar();
+				if(keyCode == KeyEvent.VK_ENTER) {
+					sendMessage();
+				}
+			}
+			
+		});
 		// Pannel
 		pannel.setBackground(Color.LIGHT_GRAY);
 		pannel.add(textField);
@@ -66,7 +77,7 @@ public class ChatWindow {
 		// Frame
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				System.exit(0);
+				finish();
 			}
 		});
 		frame.setVisible(true);
@@ -80,6 +91,13 @@ public class ChatWindow {
 	}
 	
 	private void sendMessage() {
+		String message = textField.getText();
+		System.out.println("메시지 보내는 프로토콜 구현:" + message);
+		textField.setText("");
+		textField.requestFocus();
+		
+		// Chat Client Thread에서 서버로 부터 받은 메시지가 있다고 치고 (가짜데이터 mocdata)
+		updateTextArea("마이콜:" + message); // 데이터 보내는 메소드
 	}
 	
 	private void updateTextArea(String message) {
@@ -87,6 +105,14 @@ public class ChatWindow {
 			textArea.append("\n");
 			
 		}
+	private void finish() {
+		System.out.println("소켓 닫기 or 방나가기 프로토콜 구현");
+		System.exit(0); // 0은 정상종료 이외 반환하면 에러남	
+		}
+	/*
+	 * @author kickscar
+	 * Receive Thread from Chat Server
+	 */
 	private class ChatClientThread extends Thread{
 
 		@Override
