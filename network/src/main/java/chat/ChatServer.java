@@ -11,9 +11,9 @@ import java.util.List;
 
 public class ChatServer {
 	public static int PORT = 9999;
-	static List<Writer> listWriters = new ArrayList<Writer>();
 	public static void main(String[] args) {
 		ServerSocket serverSocket = null;
+		List<Writer> listWriters = new ArrayList<Writer>();
 		try {
 			serverSocket = new ServerSocket();
 			
@@ -23,10 +23,18 @@ public class ChatServer {
 			
 			while(true) {
 				Socket socket = serverSocket.accept();
-				new ChatServerThread(socket).start();
+				new ChatServerThread(socket,listWriters).start();
 			}
 		} catch (IOException e) {
 			System.out.println("error : " + e);
+		}finally {
+			try {
+				if (serverSocket != null && !serverSocket.isClosed()) {
+					serverSocket.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 
 	}

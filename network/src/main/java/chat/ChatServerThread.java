@@ -17,10 +17,10 @@ public class ChatServerThread extends Thread {
 
 	private String nickname;
 	private Socket socket;
-	List<Writer> listWriters = new ArrayList<Writer>();
+	List<Writer> listWriters;
 	PrintWriter printWriter = null;
 	BufferedReader bufferedReader = null;
-
+	
 	public ChatServerThread(Socket socket) {
 		this.socket = socket;
 	}
@@ -47,10 +47,12 @@ public class ChatServerThread extends Thread {
 			while (true) {
 				String request = bufferedReader.readLine();
 				if (request == null) {
-					log("클라이언트로 부터 연결 끊김");
+					log("클라이언트로 부터 연결 끊김1");
+					doQuit(printWriter);
 					break;
 				}
 				 printWriter.println(request);
+				 
 				String[] tokens = request.split(":");
 				if ("join".equals(tokens[0])) {
 					doJoin(tokens[1], printWriter);					
@@ -62,14 +64,9 @@ public class ChatServerThread extends Thread {
 					ChatServer.log("에러 : 알 수 없는 요청(" + tokens[0] + ")");
 				}
 			}
-			new ChatServerThread(socket,listWriters).start();
 			
 		} catch (SocketException ex) {
-//			if(request == null) {
-			System.out.println("클라이언트로 부터 연결 끊김");
-//			doQuit(printWriter);
-//			break;
-//			}
+			System.out.println("클라이언트로 부터 연결 끊김2");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -84,10 +81,8 @@ public class ChatServerThread extends Thread {
 
 	}
 	private void doQuit(Writer writer) {
-		
 		removeWriter(writer);
 		String data = nickname + "님이 퇴장 하였습니다.";
-		System.out.println(data);
 		broadcast(data);
 	}
 
@@ -96,29 +91,25 @@ public class ChatServerThread extends Thread {
 			for (Writer writer : listWriters) {
 				PrintWriter printWriter = (PrintWriter) writer;
 				printWriter.println(data);
-//				printWriter.flush();
 			}
 		}
 
 	}
 
 	private void removeWriter(Writer writer) {
-
+		listWriters.remove(writer);
 	}
 
 	private void doMessage(String string) {
-		System.out.println(nickname +":"+string);
-
+		broadcast(nickname +":"+string);
 	}
 
 	private void doJoin(String nickName, Writer writer) {
 		this.nickname = nickName;
 		String data = nickName + "님이 참여하였습니다.";
-		System.out.println(data);
 		broadcast(data);
 		addWriter(writer);
 		printWriter.println("join:ok");
-//		printWriter.flush();
 	}
 
 	private void addWriter(Writer writer) {
