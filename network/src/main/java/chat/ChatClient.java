@@ -23,28 +23,27 @@ public class ChatClient {
 			socket = new Socket();
 			socket.connect(new InetSocketAddress(SERVER_IP, SERVER_PORT));
 			log("connected");
-			
+
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 			PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
 
-
-				System.out.print("닉네임>>");
-				String nickname = scanner.nextLine();
-				printWriter.println("join:" + nickname);
+			System.out.print("닉네임>>");
+			String nickname = scanner.nextLine();
+			printWriter.println("join:" + nickname);
 
 			new ChatClientThread(bufferedReader).start();
 
 			while (true) {
 				System.out.print(">> ");
 				String input = scanner.nextLine();
-				printWriter.println(input);
 				if ("quit".equals(input)) {
 					break;
 				} else {
 					// 메세지 처리
-
+					printWriter.println("message:"+input);
 				}
 			}
+
 		} catch (IOException ex) {
 			log("error: " + ex);
 		} finally {

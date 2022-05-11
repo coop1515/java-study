@@ -29,8 +29,8 @@ public class ChatClientThread extends Thread {
 				}
 				System.out.println(data);
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		}catch (IOException e) {
+			System.out.println("종료되었습니다.");
 		} finally {
 			try {
 				if (bufferedReader != null) {

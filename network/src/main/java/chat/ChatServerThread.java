@@ -20,7 +20,7 @@ public class ChatServerThread extends Thread {
 	List<Writer> listWriters;
 	PrintWriter printWriter = null;
 	BufferedReader bufferedReader = null;
-	
+
 	public ChatServerThread(Socket socket) {
 		this.socket = socket;
 	}
@@ -43,7 +43,7 @@ public class ChatServerThread extends Thread {
 			printWriter = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8),
 					true);
 			// 3.
-			
+
 			while (true) {
 				String request = bufferedReader.readLine();
 				if (request == null) {
@@ -51,11 +51,11 @@ public class ChatServerThread extends Thread {
 					doQuit(printWriter);
 					break;
 				}
-				 printWriter.println(request);
-				 
+				printWriter.println(request);
+
 				String[] tokens = request.split(":");
 				if ("join".equals(tokens[0])) {
-					doJoin(tokens[1], printWriter);					
+					doJoin(tokens[1], printWriter);
 				} else if ("message".equals(tokens[0])) {
 					doMessage(tokens[1]);
 				} else if ("quit".equals(tokens[0])) {
@@ -64,7 +64,7 @@ public class ChatServerThread extends Thread {
 					ChatServer.log("에러 : 알 수 없는 요청(" + tokens[0] + ")");
 				}
 			}
-			
+
 		} catch (SocketException ex) {
 			System.out.println("클라이언트로 부터 연결 끊김2");
 		} catch (IOException e) {
@@ -78,8 +78,8 @@ public class ChatServerThread extends Thread {
 
 			}
 		}
-
 	}
+
 	private void doQuit(Writer writer) {
 		removeWriter(writer);
 		String data = nickname + "님이 퇴장 하였습니다.";
@@ -97,11 +97,13 @@ public class ChatServerThread extends Thread {
 	}
 
 	private void removeWriter(Writer writer) {
-		listWriters.remove(writer);
+		synchronized (listWriters) {
+			listWriters.remove(writer);
+		}
 	}
 
 	private void doMessage(String string) {
-		broadcast(nickname +":"+string);
+		broadcast(nickname + ":" + string);
 	}
 
 	private void doJoin(String nickName, Writer writer) {
