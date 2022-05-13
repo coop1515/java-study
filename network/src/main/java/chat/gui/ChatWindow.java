@@ -29,6 +29,7 @@ public class ChatWindow {
 	private TextArea textArea;
 	BufferedReader bufferedReader;
 	PrintWriter printWriter;
+	String name;
 	Socket socket;
 	
 	public ChatWindow(String name, Socket socket) {
@@ -38,6 +39,7 @@ public class ChatWindow {
 		textField = new TextField();
 		textArea = new TextArea(30, 80);
 		this.socket = socket;
+		this.name = name;
 	}
 
 	public void show() {
@@ -109,6 +111,9 @@ public class ChatWindow {
 	}
 	private void sendMessage() {
 		String message = textField.getText();
+		if ("quit".equals(message)) {
+			finish();
+		}
 		printWriter.println("message:"+ message);
 		textField.setText("");
 		textField.requestFocus();
@@ -123,6 +128,7 @@ public class ChatWindow {
 		}
 	private void finish() {
 //		System.out.println("소켓 닫기 or 방나가기 프로토콜 구현");
+		printWriter.println("quit");
 		System.exit(0); // 0은 정상종료 이외 반환하면 에러남	
 		}
 	/*

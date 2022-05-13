@@ -11,23 +11,23 @@ public class Money {
 
 	public Object add(Money money) {
 		
-		int amount = Integer.parseInt(money.toString()) + this.amount ;
-		return amount;
+		return new Money(amount + money.amount);
+		
 	}
 
 	public Object minus(Money money) {
 
-		return null;
+		return new Money(amount - money.amount);
 	}
 
 	public Object multiply(Money money) {
 
-		return null;
+		return new Money(amount * money.amount);
 	}
 
 	public Object devide(Money money) {
 
-		return null;
+		return new Money(amount / money.amount);
 	}
 	
 	@Override
