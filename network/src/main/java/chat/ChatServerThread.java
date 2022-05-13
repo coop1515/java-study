@@ -51,7 +51,7 @@ public class ChatServerThread extends Thread {
 					doQuit(printWriter);
 					break;
 				}
-				printWriter.println(request);
+//				printWriter.println(request);
 
 				String[] tokens = request.split(":");
 				if ("join".equals(tokens[0])) {
