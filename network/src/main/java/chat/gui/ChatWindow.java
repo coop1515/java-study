@@ -111,9 +111,9 @@ public class ChatWindow {
 	}
 	private void sendMessage() {
 		String message = textField.getText();
-		if ("quit".equals(message)) {
-			finish();
-		}
+//		if ("quit".equals(message)) {
+//			finish();
+//		}
 		printWriter.println("message:"+ message);
 		textField.setText("");
 		textField.requestFocus();
