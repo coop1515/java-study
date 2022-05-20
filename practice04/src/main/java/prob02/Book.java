@@ -38,11 +38,11 @@ public class Book {
 	}
 	public void print() {
 		if (stateCode == 1) {
-			System.out.println("책 제목 : "+title+ ", 작가 : "+author+", 대여 유무 : 재고있음.");
+			System.out.println("["+bookNo+"]책 제목 : "+title+ ", 작가 : "+author+", 대여 유무 : 재고있음.");
 		}
 		
 		else {
-			System.out.println("책 제목 : "+title+ ", 작가 : "+author+", 대여 유무 : 대여중.");
+			System.out.println("["+bookNo+"]책 제목 : "+title+ ", 작가 : "+author+", 대여 유무 : 대여중.");
 		}
 		
 	}
